@@ -19,10 +19,6 @@ public class CorredorRepositoryImpl implements CorredorRepository {
 
         this.jdbcTemplate.batchUpdate(
                 "INSERT INTO corredores(cpf,nome,genero,diaDn,mesDn,anoDn) VALUES ('10001287','Luiz','masculino',22,5,1987)");
-
-        this.jdbcTemplate.batchUpdate(
-                "INSERT INTO corredores(cpf,nome,genero,diaDn,mesDn,anoDn) VALUES ('0000123407','Bini','masculino',22,5,1997)");
-
     }
 
     @Override
