@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class EventosRepositoryImpl implements EventoRepository {
@@ -17,13 +18,30 @@ public class EventosRepositoryImpl implements EventoRepository {
         this.jdbcTemplate.execute("CREATE TABLE eventos("
                 + "id int, nome VARCHAR(255), dia int, mes int, ano int, distancia int, horas int, minutos int, segundos int,PRIMARY KEY(id))");
 
-        this.jdbcTemplate.batchUpdate(
-                "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
-                        " ('1','Poa Day Run',22,5,2019,5,0,35,32)");
+        var ids = new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        var nomes = new String[]{ "Evento 1", "Evento 2", "Evento 3", "Evento 4", "Evento 5", "Evento 6", "Evento 7", "Evento 8", "Evento 9", "Evento 10" };
+        var dias = new int[] { 23, 18, 10, 11, 28, 8, 9, 4, 7 , 14 };
+        var meses = new int[] { 1, 2, 3, 8, 5, 6, 7, 4, 9, 10 };
+        var anos = new int[] { 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021 };
+        var distancias = new int[] { 5, 5, 5, 5, 5, 5, 5, 5, 9, 5 };
+        var horas = new int[] { 8, 8, 7, 5, 6, 5, 6, 3, 5, 4 };
+        var minutos = new int[] { 30, 15, 15, 2, 13, 42, 7, 34, 12, 3 };
+        var segundos = new int[] { 4, 45, 12, 23, 43, 54, 30, 39, 31, 10 };
 
-        this.jdbcTemplate.batchUpdate(
-                "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
-                        " ('2','Zap Run Day',12,6,2020,5,0,37,32)");
+        for (int i = 0; i < 10; i ++) {
+            this.jdbcTemplate.batchUpdate(
+                    "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
+                            "(" + ids[i] + ",'" + nomes[i] + "'," + dias[i] + "," + meses[i] + "," + anos[i] + "," + distancias[i] + "," + horas[i] + "," + minutos[i] + "," + segundos[i] +")"
+            );
+        }
+
+//        this.jdbcTemplate.batchUpdate(
+//                "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
+//                        " ('1','Poa Day Run',22,5,2019,5,0,35,32)");
+//
+//        this.jdbcTemplate.batchUpdate(
+//                "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
+//                        " ('2','Zap Run Day',12,6,2020,5,0,37,32)");
     }
 
     @Override

@@ -17,23 +17,31 @@ public class EstatisticasDTO {
         return media;
     }
 
-    public double getMediana() {
-        return mediana;
-    }
-
-    public double getDesvioPadrao() {
-        return desvioPadrao;
-    }
-
     public void setMedia(double media) {
         this.media = media;
+    }
+
+    public double getMediana() {
+        return mediana;
     }
 
     public void setMediana(double mediana) {
         this.mediana = mediana;
     }
 
+    public double getDesvioPadrao() {
+        return desvioPadrao;
+    }
+
     public void setDesvioPadrao(double desvioPadrao) {
         this.desvioPadrao = desvioPadrao;
+    }
+
+    public int getNumCorridas() {
+        return numCorridas;
+    }
+
+    public void setNumCorridas(int numCorridas) {
+        this.numCorridas = numCorridas;
     }
 }

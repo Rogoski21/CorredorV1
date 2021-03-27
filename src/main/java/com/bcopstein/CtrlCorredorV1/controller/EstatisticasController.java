@@ -27,12 +27,7 @@ public class EstatisticasController {
                 .filter(e -> e.getDistancia() == distancia)
                 .collect(Collectors.toList());
 
-        eventos.sort(new Comparator<Evento>() {
-            @Override
-            public int compare(Evento e1, Evento e2) {
-                return e1.getTempoEmMinutos() - e2.getTempoEmMinutos();
-            }
-        });
+        eventos.sort(Comparator.comparingInt(Evento::getTempoEmMinutos));
 
         var totalMinutos = 0;
         for (Evento e : eventos) {
