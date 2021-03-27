@@ -62,6 +62,10 @@ public class Evento {
         return segundos;
     }
 
+    public int getTempoEmMinutos() {
+        return (horas * 3600 + minutos * 60 + segundos) / 60;
+    }
+
     @Override
     public String toString() {
         return "Evento [ano=" + ano + ", dia=" + dia + ", distancia=" + distancia + ", horas=" + horas + ", id=" + id

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+@Repository
 public class EventosRepositoryImpl implements EventoRepository {
     private JdbcTemplate jdbcTemplate;
 
@@ -23,7 +23,7 @@ public class EventosRepositoryImpl implements EventoRepository {
 
         this.jdbcTemplate.batchUpdate(
                 "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
-                        " ('2','Zap Run Day',12,6,2020,10,0,35,32)");
+                        " ('2','Zap Run Day',12,6,2020,5,0,37,32)");
     }
 
     @Override
