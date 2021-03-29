@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class EventosRepositoryImpl implements EventoRepository {
+public class EventoRepositoryImpl implements EventoRepository {
     private JdbcTemplate jdbcTemplate;
 
-    public EventosRepositoryImpl(JdbcTemplate jdbcTemplate) {
+    public EventoRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
 
         this.jdbcTemplate.execute("DROP TABLE eventos IF EXISTS");
