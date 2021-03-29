@@ -3,13 +3,13 @@ package com.bcopstein.CtrlCorredorV1.model;
 public class Evento {
     private int id;
     private String nome;
-    // Data do evento
+
     private int dia;
     private int mes;
     private int ano;
-    // Distancia percorrida
-    private int distancia; // metros
-    // Tempo que o corredor levou para percorrer a distancia
+
+    private int distancia;
+
     private int horas;
     private int minutos;
     private int segundos;

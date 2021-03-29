@@ -5,7 +5,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 public class EventosRepositoryImpl implements EventoRepository {
@@ -35,13 +34,6 @@ public class EventosRepositoryImpl implements EventoRepository {
             );
         }
 
-//        this.jdbcTemplate.batchUpdate(
-//                "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
-//                        " ('1','Poa Day Run',22,5,2019,5,0,35,32)");
-//
-//        this.jdbcTemplate.batchUpdate(
-//                "INSERT INTO eventos(id,nome,dia,mes,ano,distancia,horas,minutos,segundos) VALUES" +
-//                        " ('2','Zap Run Day',12,6,2020,5,0,37,32)");
     }
 
     @Override
