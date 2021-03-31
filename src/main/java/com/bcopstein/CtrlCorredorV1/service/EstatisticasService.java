@@ -66,12 +66,12 @@ public class EstatisticasService {
 
         var maiorDiff = -1;
         var eventosDiferença = new Evento[2];
-        for (int i = 0; i < eventos.size() - 1; i ++) {
+        for (int i = 0; i < eventos.size() - 1; i++) {
             var atual = eventos.get(i);
             var prox = eventos.get(i + 1);
 
             var diff = atual.getTempoEmMinutos() - prox.getTempoEmMinutos();
-            if (diff  > maiorDiff) {
+            if (diff > maiorDiff) {
                 maiorDiff = diff;
                 eventosDiferença[0] = atual;
                 eventosDiferença[1] = prox;

@@ -2,13 +2,8 @@ package com.bcopstein.CtrlCorredorV1.controller;
 
 import com.bcopstein.CtrlCorredorV1.dto.EstatisticasDTO;
 import com.bcopstein.CtrlCorredorV1.dto.PerformanceDTO;
-import com.bcopstein.CtrlCorredorV1.model.Evento;
-import com.bcopstein.CtrlCorredorV1.repository.EventoRepositoryImpl;
 import com.bcopstein.CtrlCorredorV1.service.EstatisticasService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Comparator;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/estatisticas")

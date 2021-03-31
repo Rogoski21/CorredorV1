@@ -1,7 +1,7 @@
 package com.bcopstein.CtrlCorredorV1.controller;
 
 import com.bcopstein.CtrlCorredorV1.model.Corredor;
-import com.bcopstein.CtrlCorredorV1.repository.CorredorRepository;
+import com.bcopstein.CtrlCorredorV1.service.CorredorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,23 +9,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/corredores")
 public class CorredorController {
+    private final CorredorService corredorService;
 
-    private CorredorRepository corredorRepository;
-
-    public CorredorController(CorredorRepository corredorRepository) {
-        this.corredorRepository = corredorRepository;
+    public CorredorController(CorredorService corredorService) {
+        this.corredorService = corredorService;
     }
 
     @GetMapping
     @CrossOrigin(origins = "*")
     public List<Corredor> consultaCorredor() {
-        return corredorRepository.findAll();
+        return corredorService.consultaCorredor();
     }
 
     @PostMapping
     @CrossOrigin(origins = "*")
     public boolean cadastraCorredor(@RequestBody final Corredor corredor) {
-        return corredorRepository.saveCorredor(corredor);
+        return corredorService.cadastraCorredor(corredor);
     }
 
 }
