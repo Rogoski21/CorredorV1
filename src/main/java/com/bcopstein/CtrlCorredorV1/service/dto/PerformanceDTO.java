@@ -1,4 +1,4 @@
-package com.bcopstein.CtrlCorredorV1.dto;
+package com.bcopstein.CtrlCorredorV1.service.dto;
 
 public class PerformanceDTO {
     private String evento1;

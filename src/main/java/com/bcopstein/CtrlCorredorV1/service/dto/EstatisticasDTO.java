@@ -1,4 +1,4 @@
-package com.bcopstein.CtrlCorredorV1.dto;
+package com.bcopstein.CtrlCorredorV1.service.dto;
 
 public class EstatisticasDTO {
     private double media;

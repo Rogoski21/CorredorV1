@@ -1,13 +1,13 @@
-package com.bcopstein.CtrlCorredorV1.repository;
+package com.bcopstein.CtrlCorredorV1.dados.repository;
 
-import com.bcopstein.CtrlCorredorV1.model.Evento;
+import com.bcopstein.CtrlCorredorV1.dados.model.Evento;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class EventoRepositoryImpl implements EventoRepository {
+public class EventoRepositoryImpl implements IEventoRepository, IEventosRepEstatisticas {
     private JdbcTemplate jdbcTemplate;
 
     public EventoRepositoryImpl(JdbcTemplate jdbcTemplate) {

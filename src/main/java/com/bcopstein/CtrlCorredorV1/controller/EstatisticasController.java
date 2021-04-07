@@ -1,7 +1,7 @@
 package com.bcopstein.CtrlCorredorV1.controller;
 
-import com.bcopstein.CtrlCorredorV1.dto.EstatisticasDTO;
-import com.bcopstein.CtrlCorredorV1.dto.PerformanceDTO;
+import com.bcopstein.CtrlCorredorV1.service.dto.EstatisticasDTO;
+import com.bcopstein.CtrlCorredorV1.service.dto.PerformanceDTO;
 import com.bcopstein.CtrlCorredorV1.service.EstatisticasService;
 import org.springframework.web.bind.annotation.*;
 

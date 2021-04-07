@@ -1,9 +1,10 @@
 package com.bcopstein.CtrlCorredorV1.service;
 
-import com.bcopstein.CtrlCorredorV1.dto.EstatisticasDTO;
-import com.bcopstein.CtrlCorredorV1.dto.PerformanceDTO;
-import com.bcopstein.CtrlCorredorV1.model.Evento;
-import com.bcopstein.CtrlCorredorV1.repository.EventoRepositoryImpl;
+import com.bcopstein.CtrlCorredorV1.dados.model.Evento;
+import com.bcopstein.CtrlCorredorV1.dados.repository.EventoRepositoryImpl;
+import com.bcopstein.CtrlCorredorV1.dados.repository.IEventosRepEstatisticas;
+import com.bcopstein.CtrlCorredorV1.service.dto.EstatisticasDTO;
+import com.bcopstein.CtrlCorredorV1.service.dto.PerformanceDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -11,14 +12,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class EstatisticasService {
-    private final EventoRepositoryImpl eventosRepository;
+    private final IEventosRepEstatisticas iEventosRepEstatisticas;
 
-    public EstatisticasService(EventoRepositoryImpl eventosRepository) {
-        this.eventosRepository = eventosRepository;
+    public EstatisticasService(EventoRepositoryImpl iEventosRepEstatisticas) {
+        this.iEventosRepEstatisticas = iEventosRepEstatisticas;
     }
 
     public EstatisticasDTO getEstatisticasDTO(int distancia) {
-        var eventos = eventosRepository.findAll()
+        var eventos = iEventosRepEstatisticas.findAll()
                 .stream()
                 .filter(e -> e.getDistancia() == distancia)
                 .sorted(Comparator.comparingInt(Evento::getTempoEmMinutos))
@@ -53,7 +54,7 @@ public class EstatisticasService {
     }
 
     public PerformanceDTO getPerformanceDTO(int distancia, int ano) {
-        var eventos = eventosRepository.findAll()
+        var eventos = iEventosRepEstatisticas.findAll()
                 .stream()
                 .filter(e -> e.getAno() == ano)
                 .filter(e -> e.getDistancia() == distancia)

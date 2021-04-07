@@ -1,12 +1,12 @@
-package com.bcopstein.CtrlCorredorV1.repository;
+package com.bcopstein.CtrlCorredorV1.dados.repository;
 
-import com.bcopstein.CtrlCorredorV1.model.Corredor;
+import com.bcopstein.CtrlCorredorV1.dados.model.Corredor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class CorredorRepositoryImpl implements CorredorRepository {
+public class CorredorRepositoryImpl implements ICorredorRepository {
     private JdbcTemplate jdbcTemplate;
 
     public CorredorRepositoryImpl(JdbcTemplate jdbcTemplate) {

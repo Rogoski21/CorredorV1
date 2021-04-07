@@ -1,4 +1,4 @@
-package com.bcopstein.CtrlCorredorV1.model;
+package com.bcopstein.CtrlCorredorV1.dados.model;
 
 public class Corredor {
     private String cpf;
